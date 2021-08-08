@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
-    <style name="Theme.Chat" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Chat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +14,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--1、NoActionBar 2、windowFullscreen 用来控制标题栏和状态栏的一个显示-->
+    <style name="AppTheme" parent="Theme.Chat">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
