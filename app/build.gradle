@@ -45,4 +45,5 @@ dependencies {
 
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    implementation 'com.roughike:bottom-bar:2.3.1'
 }
