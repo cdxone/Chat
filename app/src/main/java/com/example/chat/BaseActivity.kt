@@ -1,9 +1,14 @@
 package com.example.chat
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
+
+    val progressDialog by lazy {
+        ProgressDialog(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,5 +23,14 @@ abstract class BaseActivity : AppCompatActivity() {
 
     // 获得布局的Id
     abstract fun getLayoutId(): Int
+
+    fun showProgress(msg: String) {
+        progressDialog.setMessage(msg)
+        progressDialog.show()
+    }
+
+    fun dismissProgress(){
+        progressDialog.dismiss()
+    }
 
 }
