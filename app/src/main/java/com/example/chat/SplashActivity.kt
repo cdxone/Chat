@@ -25,6 +25,7 @@ class SplashActivity : BaseActivity(), SplashContract.View {
     override fun init() {
         super.init()
         presenter.checkLoginState()
+
     }
 
     // 延迟2秒，跳转到登录界面

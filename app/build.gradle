@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    useLibrary 'org.apache.http.legacy'
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tool_version
 
@@ -17,7 +18,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 
@@ -31,14 +32,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs = []
+        }
+    }
 }
 
 dependencies {
-
+    implementation fileTree(includes: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    //implementation files('src\\main\\libs\\hyphenatechat_3.8.4.jar')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -47,3 +56,10 @@ dependencies {
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation 'com.roughike:bottom-bar:2.3.1'
 }
+
+//repositories {
+//    mavenCentral()
+//    flatDir{
+//        dirs 'libs'
+//    }
+//}
