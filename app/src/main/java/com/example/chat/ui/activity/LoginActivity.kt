@@ -1,7 +1,6 @@
-package com.example.chat
+package com.example.chat.ui.activity
 
-import android.view.KeyEvent
-import android.widget.TextView
+import com.example.chat.R
 import com.example.chat.contract.LoginContract
 import com.example.chat.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*

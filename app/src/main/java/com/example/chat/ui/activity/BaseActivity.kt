@@ -1,4 +1,4 @@
-package com.example.chat
+package com.example.chat.ui.activity
 
 import android.app.ProgressDialog
 import android.content.Context

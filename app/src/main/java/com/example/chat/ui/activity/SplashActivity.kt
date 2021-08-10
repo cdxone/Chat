@@ -1,10 +1,10 @@
-package com.example.chat
+package com.example.chat.ui.activity
 
 import android.os.Handler
 import android.os.Looper
+import com.example.chat.R
 import com.example.chat.contract.SplashContract
 import com.example.chat.presenter.SplashPresenter
-import com.hyphenate.chat.EMClient
 import org.jetbrains.anko.startActivity
 
 class SplashActivity : BaseActivity(), SplashContract.View {

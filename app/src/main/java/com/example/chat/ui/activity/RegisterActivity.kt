@@ -1,5 +1,6 @@
-package com.example.chat
+package com.example.chat.ui.activity
 
+import com.example.chat.R
 import com.example.chat.contract.RegisterContract
 import com.example.chat.presenter.RegisterPresenter
 import kotlinx.android.synthetic.main.activity_login.et_name
