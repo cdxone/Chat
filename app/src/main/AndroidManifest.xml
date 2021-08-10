@@ -122,6 +122,10 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait" />
+
         <!-- 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="1145210809041724#chat" />
         <!-- 声明SDK所需的service SDK核心功能-->
@@ -142,6 +146,11 @@
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.example.chat.BmobContentProvider">
+        </provider>
 
     </application>
 

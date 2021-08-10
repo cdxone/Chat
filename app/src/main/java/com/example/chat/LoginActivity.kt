@@ -24,9 +24,14 @@ class LoginActivity : BaseActivity(), LoginContract.View {
             login()
             true
         }
+        // 新用户
+        btn_new.setOnClickListener {
+            startActivity<RegisterActivity>()
+        }
     }
 
     private fun login() {
+        hideSoftKeyBoard()
         presenter.login(et_name.text.toString(), et_psd.text.toString())
     }
 

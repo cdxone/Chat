@@ -1,13 +1,20 @@
 package com.example.chat
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    val progressDialog by lazy {
+    private val progressDialog by lazy {
         ProgressDialog(this)
+    }
+
+    // 软键盘
+    private val inputMethodManager by lazy {
+        getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +36,15 @@ abstract class BaseActivity : AppCompatActivity() {
         progressDialog.show()
     }
 
-    fun dismissProgress(){
+    fun dismissProgress() {
         progressDialog.dismiss()
     }
 
+    /**
+     * 隐藏软键盘
+     * 因为很多页面都有这个需求
+     */
+    fun hideSoftKeyBoard() {
+        inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+    }
 }
