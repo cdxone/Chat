@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/tv_name"
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入用户名"
@@ -13,19 +13,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/tv_psd"
+        android:id="@+id/et_psd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入密码"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+        app:layout_constraintTop_toBottomOf="@id/et_name" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="登录"
-        app:layout_constraintTop_toBottomOf="@id/tv_psd" />
+        app:layout_constraintTop_toBottomOf="@id/et_psd" />
 
     <Button
         android:id="@+id/btn_new"
