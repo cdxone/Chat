@@ -4,6 +4,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.chat.contract.SplashContract
 import com.example.chat.presenter.SplashPresenter
+import com.hyphenate.chat.EMClient
 import org.jetbrains.anko.startActivity
 
 class SplashActivity : BaseActivity(), SplashContract.View {
@@ -25,7 +26,6 @@ class SplashActivity : BaseActivity(), SplashContract.View {
     override fun init() {
         super.init()
         presenter.checkLoginState()
-
     }
 
     // 延迟2秒，跳转到登录界面

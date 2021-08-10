@@ -10,7 +10,7 @@ import org.jetbrains.anko.toast
 
 class LoginActivity : BaseActivity(), LoginContract.View {
 
-    val presenter = LoginPresenter(this)
+    private val presenter = LoginPresenter(this)
 
     override fun getLayoutId(): Int = R.layout.activity_login
 

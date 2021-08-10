@@ -118,6 +118,9 @@
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <!-- 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="1145210809041724#chat" />
