@@ -12,6 +12,27 @@ class ContactPresenter(val view: ContactContract.View) : ContactContract.Present
         getAllContactsFromServer();
     }
 
+    override fun deleteContact(name: String) {
+        doAsync {
+            //1、让代码可以在子线程中运行
+            try {
+                // 这个是一个同步的方法
+                EMClient.getInstance().contactManager().deleteContact(name);
+                // 加载成功
+                //2、切换到主线程中运行
+                uiThread {
+                    view.onDeleteContactSuccess()
+                }
+            } catch (e: Exception) {
+                // 加载失败
+                //2、切换到主线程中运行
+                uiThread {
+                    view.onDeleteContactFailed()
+                }
+            }
+        }
+    }
+
     /**
      * 获取好友列表
      * 这个是Model层

@@ -126,6 +126,14 @@
             android:name=".ui.activity.RegisterActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".ui.activity.AddFriendActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.ChatActivity"
+            android:screenOrientation="portrait" />
+
         <!-- 设置环信应用的AppKey -->
         <meta-data android:name="EASEMOB_APPKEY"  android:value="1145210809041724#chat" />
         <!-- 声明SDK所需的service SDK核心功能-->

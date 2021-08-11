@@ -1,6 +1,8 @@
 package com.example.chat.ui.fragment
 
+import android.view.View
 import com.example.chat.R
+import com.example.chat.ui.activity.AddFriendActivity
 import com.example.chat.ui.activity.LoginActivity
 import com.hyphenate.EMCallBack
 import com.hyphenate.chat.EMClient
@@ -11,12 +13,13 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 
-class DynamicFragment : BaseFragment() {
+class DynamicFragment : BaseFragment(), View.OnClickListener {
 
     override fun getLayoutId(): Int = R.layout.fragment_dynamic
 
     override fun init() {
         super.init()
+        tv_add_friend.setOnClickListener(this)
         btn_logout.setOnClickListener {
             EMClient.getInstance().logout(true, object : EMCallBack {
                 override fun onSuccess() {
@@ -38,6 +41,14 @@ class DynamicFragment : BaseFragment() {
                     }
                 }
             })
+        }
+    }
+
+    override fun onClick(v: View?) {
+        val id = v?.id
+        if (id == R.id.tv_add_friend) {
+            // 添加朋友
+            context?.startActivity<AddFriendActivity>()
         }
     }
 }
